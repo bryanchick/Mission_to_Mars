@@ -74,68 +74,28 @@
 
 
   <div class="container-fluid">
-    <h2>{{data.news_title}}</h2>
-    <p>{{data.news_paragraph}}</p>
+    <h2>News Headlines</h2>
+    <h4>{{result.item_title}}</h4>
+    <p>{{result.item_desc}}</p>
   </div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-7">
-        <h3>Featured Image</h3>
+  <div class="col">
+    <h2>Mars Facts</h2>
+    {{result.html_table_facts|safe}}
+</div>
 
-        <img src="{{data.featured_image}}" alt="featured image" style="width: 80%;">
-
-      </div>
-      <div class="col-md-5">
-        <ul>
-          <h3>Current Mars Weather</h3>
-          {{data.mars_weather}}
-        </ul>
-
-
-        <ul>
-          <h3>Mars Facts</h3>
-          {{data.mars_facts_table|safe}}
-          <a href="{{data.mars_facts_table}}"></a>
-        </ul>
-      </div>
-    </div>
+  
+  <div class="col-md-5">
+    <ul>
+    <h3>Current Mars Weather</h3>
+      {{result.weather}}
+    </ul>
   </div>
 
-  <div class="container-fluid">
-    <H3 align="center">Mars Hemispheres</H3>
-    <div class="body">
-      <div class="row">
-        <div class="col-md-6">
-          {% for hemisphere in data.hemisphere_img_url[0:2] %}
-
-          <img src="{{hemisphere['image url']}}" alt="hemisphere" style="width:50%;">
-          <div class="caption" style="font-weight: bold;">
-            {{hemisphere['image title']}}
-          </div>
-          {% endfor %}
-        </div>
-        <div class="col-md-6">
-          {% for hemisphere in data.hemisphere_img_url[2:4] %}
-
-          <img src="{{hemisphere['image url']}}" alt="hemisphere" style="width:50%;">
-          <div class="caption" style="font-weight: bold;">
-            {{hemisphere['image title']}}
-          </div>
-          {% endfor %}
+       
+      
 
 
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-  {% endfor %}
-  <hr>
-
-  </div> <!-- /container -->
 
   </main>
 
